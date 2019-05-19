@@ -2,6 +2,7 @@
 
 // Custom headers
 #include "menu.h"
+#include "gotoxy.h"
 
 // Funcion que pinta la interfaz de los menus
 void menu (char titulo[100]) {
@@ -19,4 +20,8 @@ void menu (char titulo[100]) {
 
     printf("\n");
   }
+
+  gotoxy(10, 10);
+  printf("Pureba gotoxy\n");
+
 }

@@ -1,0 +1,5 @@
+# Ignore the export folder and it's content
+export/
+
+# Ignore the .vscode generated folder
+.vscode/

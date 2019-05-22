@@ -2,6 +2,6 @@
 #define _GOTOXY_H_
 
 // Gotoxy function
-void gotoxy(const int x, const int y);
+void gotoxy(const int y, const int x);
 
 #endif  // GOTOXY_H_

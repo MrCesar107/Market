@@ -2,13 +2,12 @@
 #include <stdlib.h>
 
 // Custom headers
-#include "menu.h"
+#include "../include/welcome_menu.h"
 
-int main() {
+int main()
+{
   system("CLEAR");
-  menu("s");
-
-  system("READ");
+  print_welcome_menu();
   system("CLEAR");
   return 0;
 }

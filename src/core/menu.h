@@ -3,9 +3,9 @@
 
 // Custom constants
 #define WIDTH       80
-#define HEIGHT      20
+#define HEIGHT      23
 
 // Header methods
-void menu(char titulo[100]);
+void menu(char title_screen[100]);
 
 #endif // MENU_H_

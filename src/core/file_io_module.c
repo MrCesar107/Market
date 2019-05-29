@@ -5,16 +5,16 @@ void write_file(char file[], char mode[], char content[])
 {
   FILE *fp;
   fp = fopen(file, mode);
-  fputs(content, fp);
+  fprintf(fp, content);
   fclose(fp);
 }
 
-void read_file(char file[], char mode[])
+const char * read_file(char file[], char mode[])
 {
-  char result[255];
+  char * result[255];
   FILE *fp;
   fp = fopen(file, mode);
   fgets(result, 255, (FILE*)fp);
-  printf("%s\n", result);
   fclose(fp);
+  return result;
 }

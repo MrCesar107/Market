@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 // Custom headers
 #include "../core/menu.h"
 #include "../core/gotoxy.h"
+#include "../core/file_io_module.h"
 
 // Custom constants
 #define BOX_WIDTH         30
@@ -49,6 +50,26 @@ void draw_box(const int x1, const int y1, const int x2, const int y2) {
   vline(y1+1,y2-1,x2);
 }
 
+short int check_user_password(char user[], char password[])
+{
+  system("CLEAR");
+  if (fopen("user.mk", "r")) 
+  {
+    char * user_data;
+    user_data = read_file("user.mk", "r");
+
+    if (strcmp(user_data, strcat(user, password)) == 0)
+      return 1;
+    else
+      return 0;
+  } else
+  {
+    write_file("user.mk", "a+", user);
+    write_file("user.mk", "a+", password);
+    return 1;
+  }
+}
+
 void print_welcome_menu() 
 {
   const char welcome_title[] = "Bienvenido a Market";
@@ -62,5 +83,4 @@ void print_welcome_menu()
   gotoxy(5, 17);
   printf("Contraseña");
   draw_box(5, 18, (5 + BOX_WIDTH), (18 + BOX_HEIGHT));
-  getchar();
 }

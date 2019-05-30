@@ -1,11 +1,13 @@
 all: compile
 
 compile:
-	cd export && gcc -o main main_menu.o welcome_menu.o gotoxy.o menu.o main.o catalogue.o file_io_module.o
+	cd export && gcc -o main main_menu.o welcome_menu.o gotoxy.o menu.o main.o catalogue.o file_io_module.o getch.o
 
 main: main.o
 
 menu: menu.o
+
+getch: getch.o
 
 gotoxy: gotoxy.o
 
@@ -22,6 +24,9 @@ gotoxy.o:
 
 menu.o:
 	cd src/core && gcc -c menu.c && mv menu.o ../../export
+
+getch.o:
+	cd src/core && gcc -c getch.c && mv getch.o ../../export
 
 main.o:
 	cd src/core && gcc -c main.c && mv main.o ../../export
